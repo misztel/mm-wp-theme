@@ -1,0 +1,23 @@
+body {
+  background-color: #f8f8f8;
+}
+
+#_themename-img-container ._themename-radio-img-img {
+  width: 45%;
+  border: 3px solid #dedede;
+  margin: 0 0 0 0;
+  cursor: pointer;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#_themename-img-container ._themename-radio-img-selected {
+  border: 3px solid rgb(155, 155, 155);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+input[type="checkbox"]:before {
+  content: "";
+  margin: -3px 0 0 -4px;
+}

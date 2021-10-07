@@ -1,0 +1,7 @@
+.slick-list {
+  padding: 0px 0px;
+}
+
+.post-slides .slick-slide {
+  display: flex;
+}
