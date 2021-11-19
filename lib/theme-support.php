@@ -12,6 +12,7 @@
       'flex-width' => true
     ));
     add_image_size('_themename-blog-thumbnail', 300, 300);
+    add_image_size('_themename-blog-single', 1200, 400, true);
   }
 
   add_action('after_setup_theme', '_themename_theme_support');

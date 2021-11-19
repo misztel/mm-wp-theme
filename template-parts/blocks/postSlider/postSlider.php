@@ -51,7 +51,9 @@ $posts = get_posts($args);
                     <?php echo $p->post_title ?>
                   </h3>
                   <p> <?php echo get_the_excerpt($p->ID); ?> </p>
-                  <?php  _themename_read_more_link(); ?>
+                  <a class="btn btn-primary" href="<?php  the_permalink($p->ID); ?>">
+                    Więcej...
+                  </a>
                 </div>
               </div>
             <?php } ?>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-  $layout = _themename_meta(get_the_ID(), '__themename_post_layout', 'full');
+  $layout = _themename_meta(get_the_ID(), '__themename_post_layout', true);
   $sidebar = is_active_sidebar('primary-sidebar');
   if($layout === 'sidebar' && !$sidebar){
     $layout = 'full';

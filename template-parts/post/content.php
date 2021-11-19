@@ -2,16 +2,23 @@
   <div class="row post-inner">
 
     <?php if(get_the_post_thumbnail() !== '') { ?>
+      <?php if(!is_single()) { ?>
       <div class="post-thumbnail col-md-6">
         <?php the_post_thumbnail( 'medium' ) ?>
       </div>
+      <?php } else {?>
+        <div class="post-thumbnail col-md-12">
+          <?php the_post_thumbnail( '_themename-blog-single' ) ?>
+        </div>
+      <?php } ?>
     <?php } ?>
 
       <?php if(!is_single()) { ?>
         <div class="col-md-6">
+      <?php } else {?>
+        <div class="mt-3 mb-3 col-md-12 d-flex justify-content-center">
       <?php } ?>
-
-    <header class="post-header">
+    <header class="post-header mb-3 mt-3">
     <?php if(is_single()) { ?>
       <h1>
         <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
@@ -22,14 +29,20 @@
       </h2>
     <?php } ?>
 
-      <div>
+      <div class="d-flex justify-content-center">
         <?php _themename_post_meta(); ?>
       </div>
     </header>
-
+      <?php if(is_single()) { ?>
+        </div>
+        <?php } ?>
     <?php if(is_single()) { ?>
-      <div>
-        <?php the_content(); ?>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <?php the_content(); ?>
+          </div>
+        </div>
       </div>
     <?php } else { ?>
       <div>
@@ -40,16 +53,16 @@
     <?php if(is_single()) { ?>
       <footer class="post-footer">
         <?php
-          if(has_category()){
-            // translators: used between categories
-            $cats_list = get_the_category_list(esc_html__(', ', '_themename'));
-            // translators: %s is the categories list
-            printf(esc_html__('Posted in %s', '_themename'), $cats_list);
-          }
-          if(has_tag()){
-            $tags_list = get_the_tag_list('<ul><li>', '</li><li>', '</li></ul>');
-            echo $tags_list;
-          }
+          // if(has_category()){
+          //   // translators: used between categories
+          //   $cats_list = get_the_category_list(esc_html__(', ', '_themename'));
+          //   // translators: %s is the categories list
+          //   printf(esc_html__('Posted in %s', '_themename'), $cats_list);
+          // }
+          // if(has_tag()){
+          //   $tags_list = get_the_tag_list('<ul><li>', '</li><li>', '</li></ul>');
+          //   echo $tags_list;
+          // }
         ?>
       </footer>
       <?php if(!is_single()) { ?>

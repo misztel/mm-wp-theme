@@ -1,0 +1,31 @@
+.is-style-_themename-heading {
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.has-text-align-center.is-style-_themename-heading::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: inherit;
+  display: block;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+}
+
+.is-style-_themename-heading::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: inherit;
+  display: block;
+  bottom: -8px;
+  width: 50px;
+}
