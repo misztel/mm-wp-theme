@@ -28,7 +28,7 @@ if(!function_exists('_themename_post_meta')){
 
 function _themename_read_more_link() {
   ?>
-    <a class="btn btn-primary" href="#" title="<?php the_title_attribute(); ?>">
+    <a class="btn btn-primary" href=" <?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
      <?php
      /* translators: %s: Post Title */
       printf(
